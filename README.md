@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Web Counter App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+counter app using React.
 
 ## Available Scripts
 
