@@ -25,3 +25,8 @@
 .counter button {
   margin: 10px;
 }
+
+.loader {
+  color: #24a0ed;
+  font-size: 18px;
+}

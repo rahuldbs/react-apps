@@ -26,6 +26,9 @@ class Counter extends React.Component {
             <main className={styles.counter}>
                 <h1>Web Counter</h1>
                 <div className={styles.value}>{this.props.counter}</div>
+                {this.props.inProgress &&
+                    <div className={styles.loader}>Loading...</div>
+                }
                 <div>
                     <button onClick={this.incrementHandler.bind(this)}>Increment</button>
                     <button onClick={this.decrementHandler.bind(this)}>Decrement</button>
@@ -38,15 +41,14 @@ class Counter extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        counter: state.counter
+        counter: state.counter,
+        inProgress: state.inProgress
     };
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        increment: getCounter(dispatch).incrementRequest,
-        decrement: getCounter(dispatch).decrementRequest
-    }
+const mapDispatchToProps = {
+    increment: getCounter.incrementRequest,
+    decrement: getCounter.decrementRequest
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
